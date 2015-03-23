@@ -1,0 +1,11 @@
+Design Principles:
+Open Close Principle: classes should be open for extension but closed for modifications.
+Dependency Inversion: High-level modules should not depend on low-level modules. IOC is an example
+Interface Segregation: Subclasses should not be forced to implement interface methods that they don't use. 
+Single Responsibility: A class should have only one responsibility to handle.
+Liskov's Substitution: Derived types must be completely substitutable for their base types without changing base class behavior
+
+Design Pattern Rules:
+Program to an interface not to the implementation
+Prefer composition over inheritance
+Delegation responsibility4
