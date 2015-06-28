@@ -2,7 +2,7 @@ package com.cpattanaik.structural.proxy;
 
 public class ProxyImage implements Image {
 
-	private RealImage rImage;
+	private Image rImage;
 	private String fileName;
 
 	public ProxyImage(String fileName) {

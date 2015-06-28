@@ -10,7 +10,7 @@ public class Client {
 	      
 	    //Here it wont crate again, 
 	    //since it is already created
-	    image.display(); 	
+	    //image.display(); 	
 		
 	}
 

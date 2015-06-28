@@ -9,3 +9,24 @@ Design Pattern Rules:
 Program to an interface not to the implementation
 Prefer composition over inheritance
 Delegation responsibility4
+
+
+Association/Aggregation/Composition
+Association: 
+public class Foo { 
+    void Baz(Bar bar) {
+    } 
+};
+
+Aggregation:
+public class Foo { 
+    private Bar bar; 
+    Foo(Bar bar) { 
+       this.bar = bar; 
+    }
+}
+
+Composition:
+public class Foo {
+    private Bar bar = new Bar(); 
+}
