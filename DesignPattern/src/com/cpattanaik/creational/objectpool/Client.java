@@ -9,11 +9,11 @@ public class Client {
 	Random rn = new Random();
 	ExecutorService executor = Executors.newFixedThreadPool(7);    //Five treads will be created
 	
-	//Another way to define an abstract method without inheriting the class in generic way
-	ObjectPool<ObjectTest> pool = new ObjectPool<ObjectTest>(10){  // 10 Objects will be there in the object pool
+	ObjectPool<ObjectTest> pool = new ObjectPool<ObjectTest>(10){
+		@Override
 		public ObjectTest create() {
-            return new ObjectTest(rn.nextInt(100));
-        }
+			return new ObjectTest(rn.nextInt(100));
+		}  
 	};
 	
 	public static void main(String[] args){

@@ -1,31 +1,18 @@
 package com.cpattanaik.structural.adaptor;
 /*
  *  Initially, only mp3 support was there. 
- *  But latter it supported mew media player.
- *  Old Audio player class initially looking as:
- * 
- *  public class AudioPlayer{
-
-	public void play(String mediaType, String FileName) {
-		if(mediaType.equals("mp3")){
-			System.out.println("Playing MP3: " + FileName);
-		}else{
-			System.out.println("Unsupported Media Type");
-		}
-		
-	}
-	
-}
- * 
+ *  But latter it is extended to support MP4/VLC players.
  */ 
 public class Client {
 	public static void main(String[] args){
-		AudioPlayer player =  new AudioPlayer();
+		//We can put this content inside a wrapper class
+		MediaPlayer player =  new MP3Player();
 		player.play("mp3", "song1.mp3");
 		
-		//New support
+		player =  new MediaAdapter(new MP4Player());
 		player.play("mp4", "Song2.mp4");
-		player.play("vlc", "Song3.vlc");
+		
+		player =  new MediaAdapter(new VLCPlayer());
+		player.play("VLC", "Song3.mp4");
 	}
-
 }

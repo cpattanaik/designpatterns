@@ -1,5 +1,6 @@
 package com.cpattanaik.creational.objectpool;
 
+import java.util.concurrent.TimeUnit;
 
 public class Task implements Runnable{
 
@@ -13,14 +14,18 @@ public class Task implements Runnable{
 	
 	@Override
 	public void run() {
-		ObjectTest objTest = pool.checkOut();
-		System.out.println("Thread " + threadId + ": Object with no. " + objTest.getX() + " was borrowed");
+		try{
+			while(true){
+			ObjectTest objTest = pool.checkOut();
+			System.out.println("Thread " + threadId + ": Object with no. " + objTest.getX() + " was borrowed");
 
-		//just to simulate long work...
-		for (int i = 0; i < 100000; i++) {
-	    }
+			//TimeUnit.SECONDS.sleep(1);
 		
-		pool.checkIn(objTest);
-		System.out.println("Thread " + threadId + ": Object with no. " + objTest.getX() + " was returned");
+			pool.checkIn(objTest);
+			System.out.println("Thread " + threadId + ": Object with no. " + objTest.getX() + " was returned");
+			}
+		}catch(Exception e){
+			//Handle Exception
+		}
 	}
 }
