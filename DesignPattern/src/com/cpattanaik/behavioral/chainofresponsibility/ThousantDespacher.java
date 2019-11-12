@@ -11,7 +11,11 @@ public class ThousantDespacher extends CashDespacher{
 		int temp = amount % 1000;
 		amount = amount  / 1000;
 		System.out.println("Despached: " + amount + " Number of 1000 rupees");
+		if(next != null){
+			next.processCash(amount);
+		}
 		return temp;
+		
 	}
 
 }

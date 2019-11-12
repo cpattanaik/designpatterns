@@ -32,7 +32,7 @@ public class Point {
         pointPolar.rotate(angle);
        
         x = (int) (pointPolar.getRadius() * Math.cos(pointPolar.getAngle()));
-        y = (int) (pointPolar.getRadius() * Math.cos(pointPolar.getAngle()));
+        y = (int) (pointPolar.getRadius() * Math.sin(pointPolar.getAngle()));
         pointCartesian = new PointCartesian(x, y);
     }
 

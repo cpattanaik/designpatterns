@@ -29,7 +29,7 @@ public class PointPolar {
 	}
 
 	public void  rotate(int angle) {
-        this.angle += angle % 360;
+        this.angle = (this.angle + angle) % 360;
     }
 
     public String toString() {
